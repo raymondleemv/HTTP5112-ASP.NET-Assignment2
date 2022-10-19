@@ -29,19 +29,25 @@ namespace HTTP5112_ASP.NET_Assignment2.Controllers
         {
             int time = 0;
             string[] keysArr = { "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+            // Set initial prevGroup value to -1 so it wont match the first time the loop runs.
             int prevGroup = -1;
+            // Loop through the input character by character to calculate the time needed
             for (int i = 0; i < word.Length; ++i)
             {
+                // Loop through the keysArr to see which group the current character belongs to
                 for (int j = 0; j < keysArr.Length; ++j)
                 {
                     int index = keysArr[j].IndexOf(word[i]);
                     if (index != -1)
                     {
+                        // Current letter is in the same group as the previous one, add pause time
                         if (j == prevGroup)
                         {
                             time += 2;
                         }
+                        // The index of the character in keysArr equals to the number of key presses needed, add the time accordingly
                         time += index + 1;
+                        // Set previous group
                         prevGroup = j;
                         break;
                     }
