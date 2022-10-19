@@ -25,7 +25,7 @@ namespace HTTP5112_ASP.NET_Assignment2.Controllers
         /// GET api/J3/CellPhoneMessaging/www -> 7
         /// </example>
         [HttpGet("{word}")]
-        public int DiceGame(string word)
+        public int CellPhoneMessaging(string word)
         {
             int time = 0;
             string[] keysArr = { "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
